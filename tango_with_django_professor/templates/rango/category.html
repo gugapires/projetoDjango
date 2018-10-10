@@ -1,0 +1,26 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    {{ category.name }}
+{% endblock title_block%}
+
+{% block body_block %}
+    <div>
+        {% if category %}
+            <h1>{{ category.name }}</h1>
+            {% if pages %}
+                <ul>
+                    {% for page in pages %}
+                        <li><a _target='blank' href="{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <strong>Não há páginas nessa categoria.</strong>
+            {% endif %}
+            <a href="{% url 'add_page' category.slug %}">Adicionar Página em {{ category.name }}</a>
+        {% else %}
+            A categoria especificada não existe!
+        {% endif %}
+    </div>
+{% endblock body_block %}
