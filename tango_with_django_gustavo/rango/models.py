@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=128, unique=True)
+    name = models.CharField(max_length=128, unique=True) # Esse "unique" significa que eu posso usar como chave primaria
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -10,6 +10,8 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+# Atenção : the field category in model Page is of type ForeignKey
 
 class Page(models.Model):
     category = models.ForeignKey(Category)
@@ -20,13 +22,5 @@ class Page(models.Model):
     def __str__(self):
         return self.title
 
-# estou no livro pag. 46
+# Estou no livro pag. 51
 
-#Django provides a comprehensive series of built-in field types. Some of the most commonly used
-#are detailed below.
-#• CharField , a field for storing character data (e.g. strings). Specify max_length to provide a
-#maximum number o characters the field can store.
-#• URLField , much like a CharField , but designed for storing resource URLs. You may also
-#specify a max_length parameter.
-#• IntegerField , which stores integers.
-#• DateField , which stores a Python datetime.date object.
