@@ -15,8 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+STATIC_DIR = os.path.join(BASE_DIR, 'static') # isso mostra o caminho completo para nossa imagem
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')  #instrui ao django o arquivos que serao upados para o root do projeto django
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -84,7 +84,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+# na pag. 45 recomenda a colocar o arquivo database no gitignore para evitar que pessoas modifiquem meu database e gere conflitos mais tarde
+# além da possibilidade de usar varios outros "databases"
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -121,9 +122,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATICFILES_DIRS = [STATIC_DIR, ]
+STATICFILES_DIRS = [STATIC_DIR, ] # lista dos caminhos os quais o django espera achar
 STATIC_URL = '/static/'
 
 #Media files (upload, etc.)
-MEDIA_ROOT = '/home/miranda/twd_bsi_2018/tango_with_django_project/static'
-MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/miranda/twd_bsi_2018/tango_with_django_project/static' # de onde vai servir
+MEDIA_URL = '/media/' #o que ele vai servir

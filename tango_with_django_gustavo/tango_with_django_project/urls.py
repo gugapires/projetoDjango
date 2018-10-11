@@ -24,5 +24,14 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^rango/', include('rango.urls')),
     url(r'^admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # essa merda aqui que vai mostrar as porcarias dos arquivos estaticos
+# depois disso, Once this is complete, you should be able to serve content from the media directory of your project
+# from the /media/ URL.
 
+
+# a respeito dos exercicios, a maioria deles eu não fiz
+# estou agora no capitulo "models and database" pag. 44
+
+#A model is a Python object that describes your database
+#table’s data. Instead of directly working on the database via SQL, you only need to manipulate the
+#corresponding Python model object.
