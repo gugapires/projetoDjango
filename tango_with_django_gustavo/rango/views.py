@@ -1,10 +1,15 @@
 from django.shortcuts import render
+from rango.models import Category
 
 
 def index(request):
-    context_dict = {'boldmessage': "Olá BSI6, este texto veio da view!"}
+    #context_dict = {'boldmessage': "Olá BSI6, este texto veio da view!"}#comentar aqui pois vou usar as informações da model, model dinamica
+    category_list = Category.objects.order_by('name')[:5] # aqui era pra usar likes mas ta dando pauu
+    context_dict = {'categories': category_list}
     return render(request, 'rango/index.html', context=context_dict)
 
+
+#estou na pagina 68
 
 def about(request):
     context_dict = {'bunda': 'Gustavo Miranda'}

@@ -10,7 +10,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
 # Atenção : the field category in model Page is of type ForeignKey
 
 class Page(models.Model):

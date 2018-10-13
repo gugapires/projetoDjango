@@ -10,3 +10,5 @@ class PageAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Category)
 admin.site.register(Page, PageAdmin)
+# para adicionar outra basta copiar e colar e colocar
+# o parametro de acordo com minha model criada

@@ -9,22 +9,32 @@ esse final de porcentagem "%" indica que tem uma template tag dentre dele, ele c
     <title>Rango</title>
 </head>
 <body>
-<h1>Rango diz...</h1>
-<div>
+    <h1>Rango diz...</h1>
+<!--div>
     Olá Seu bunda mole! <br />
-    <strong>{{ boldmessage }}</strong><br />
-</div>
-<div>
-    <!-- aqui eu evoco o static, lembre que isto é uma formalizaçao do template do django -->
-    <img src="{% static "images/rango.jpg" %}"
-         alt="Picture of Rango" />
-    <br/>
-    <hr>
-    <a href="/rango/about/">About</a><br />
-    <a href="/rango/teste/">Ir para testes</a>
+    <!--strong>{{ boldmessage }}</strong-->
+    <!--br /-->
+<!--/div-->
+    <div>
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                    <li>{{ category.name }}</li>
+                {% endfor  %}
+            </ul>
+        {% else %}
+            <strong> Não há nenhuma categoria presente! </strong>
+        {% endif %}
+    </div>
 
-</div>
-</div>
-</div>
+    <div>
+    <!-- aqui eu evoco o static, lembre que isto é uma formalizaçao do template do django -->
+        <img src="{% static "images/rango.jpg" %}"
+             alt="Picture of Rango" />
+        <br/>
+        <hr>
+        <a href="/rango/about/">About</a><br />
+    <a href="/rango/teste/">Ir para testes</a>
+    </div>
 </body>
 </html>
